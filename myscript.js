@@ -19,26 +19,26 @@ var app = new Vue (
             newToDo: '',
             todos: [
                 {
-                  text: 'testo della todo1',  
+                  text: 'Fare la spesa',  
                   done: false
                 },
                 {
-                    text: 'testo della todo2',  
+                    text: 'Annaffiare le piante',  
                     done: false
                 },
                 {
-                    text: 'testo della todo3',  
+                    text: 'Pulire la cucina',  
                     done: false
                 }       
             ]
         },
         methods:{
-            revoveToDo: function (toDoIndex) {
+            removeToDo: function (toDoIndex) {
                 this.todos.splice(toDoIndex, 1)
             },
             addToDo: function () {
                 let objToDo = {
-                    test: this.newToDo,
+                    text: this.newToDo,
                     done: false,
                 }
                 if (!this.newToDo == '' ) {
