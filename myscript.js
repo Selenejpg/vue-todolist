@@ -15,7 +15,7 @@ var app = new Vue (
             //Ogni todo sarà un oggetto, formato da due proprietà:
             //- text, una stringa che indica il testo del todo
             //- done, un booleano (true/false) che indica se il todo è stato fatto oppure no
-            
+
             newToDo: '',
             todos: [
                 {
@@ -32,9 +32,27 @@ var app = new Vue (
                 }       
             ]
         },
-
-
-
-
+        methods:{
+            revoveToDo: function (toDoIndex) {
+                this.todos.splice(toDoIndex, 1)
+            },
+            addToDo: function () {
+                let objToDo = {
+                    test: this.newToDo,
+                    done: false,
+                }
+                if (!this.newToDo == '' ) {
+                    this.todos.push(objToDo);
+                    this.newToDo = ''
+                }
+            },
+            done: function (element) {
+                if (element.done == true) {
+                    element.done = false
+                } else {
+                    element.done = true
+                }
+            }
+        }
     }
 )
